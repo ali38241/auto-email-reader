@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <style>
+        .table-container {
+            overflow: auto; /* Allows horizontal scrolling if needed */
+        }
+        table {
+            width: 100%;
+            max-width: 700px; /* Prevents exceeding the container's width */
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 3px;
+            text-align: left;
+            white-space: nowrap; /* Prevents wrapping */
+            max-width: 100px; /* Set max width for cells if needed */
+            font-size:10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<div class="table-container">
+    <table>
+        <thead>
+        <tr>
+            <th>To</th>
+            <th>From</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>TruckType</th>
+            <th>TruckName</th>
+            <th>Model</th>
+            <th>Weight</th>
+            <th>Capacity</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="record : ${records}">
+            <td th:text="${record.to}">0.00</td>
+            <td th:text="${record.from}">0.00</td>
+            <td th:text="${record.name}">0.00</td>
+            <td th:text="${record.date}">N/A</td>
+            <td th:text="${record.truckType}">N/A</td>
+            <td th:text="${record.truckName}">N/A</td>
+            <td th:text="${record.model}">N/A</td>
+            <td th:text="${record.weight}">N/A</td>
+            <td th:text="${record.capacity}">N/A</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+</body>
+</html>
